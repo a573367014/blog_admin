@@ -1,0 +1,16 @@
+{
+  "presets": [
+    //babel-preset-env可以根据配置的目标运行环境自动启用需要的 babel 插件
+    ["env", {"modules":false}],
+    "react",
+    "stage-0"
+  ],
+  "plugins": [
+    //"transform-runtime",
+    //装饰器插件
+    "transform-decorators-legacy",
+    "react-hot-loader/babel",
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }],
+  ],
+  "comments": true,
+}

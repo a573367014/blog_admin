@@ -1,0 +1,18 @@
+{
+  code: 200,
+  msg: "成功",
+  data: {
+    isopen: 0, //是否开启
+    start: new Date(), //开始时间
+    end: new Date(), //结束时间
+    autorelayreceiver: 'r.alegdtl@tneulmwy.ld,asjkflds.com', //收件人 ',' 分隔
+    ifautorelaybackup: 1, //是否保留副本
+  }
+}
+/*    
+    *标为必填
+    上传参数：
+    {
+
+    }
+*/

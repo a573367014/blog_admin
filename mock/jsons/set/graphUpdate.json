@@ -1,0 +1,22 @@
+{
+  code: 200,
+  msg: "成功",
+  data: {
+    returnData: function({
+      _req
+    }) {
+      return _req.body;
+    }
+  }
+}
+/*    
+    *标为必填
+    上传参数：
+    {
+      *id:0,
+      *email: '573367014@qq.com', //邮箱账号
+      *title: '@title',  //标题
+      *content: '@text', //签名内容
+      *isDefault: false //是否默认
+    }
+*/

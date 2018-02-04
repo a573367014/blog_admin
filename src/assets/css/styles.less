@@ -1,0 +1,108 @@
+@import './var.less';
+#app,
+.l-app{ height:100%; width:100%; }
+
+.l-aside{ 
+   &::-webkit-scrollbar {
+       width: 0px;
+       height: 0px;
+   }
+   &{
+      float:left; 
+      height:100%; 
+      max-width: @asideW !important;
+      min-width: @asideW !important;
+      width: @asideW !important;
+      overflow: auto;
+      .ant-layout-sider-trigger{
+         width: @asideW !important;
+      }
+      
+      &.ant-layout-sider-collapsed{
+         max-width: @collapsedW !important;
+         min-width: @collapsedW !important;
+         width: @collapsedW !important;
+
+         .ant-layout-sider-trigger{
+            width: @collapsedW !important;
+         }
+      }
+   }
+   .ant-menu-inline-collapsed{
+      width: @collapsedW !important;
+      .ant-menu-item{
+         padding: 0 16px !important;
+      }
+   }
+} 
+.l-main { height: 100%; padding-top:@headerW; overflow: hidden; } 
+.l-header { 
+   margin-top:-@headerW; 
+   height:@headerW; 
+   line-height: @headerW;  
+   background: white; 
+   padding:0 15px; 
+   box-shadow: 0 0 3px rgba(0,0,0,0.1); 
+   position: relative; 
+   z-index: 4; 
+
+   .ant-breadcrumb{
+      margin:0 !important;
+      line-height: @headerW;
+   }
+}
+.l-logo{
+  display: block;
+  height: @headerW;
+  line-height: @headerW;
+  text-align: center;
+
+  font-weight: bold;
+  font-size:18px;
+  background: rgba(255,255,255,.2);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 5px;
+  text-decoration: none;
+}
+.l-content { background: #fafafa; height:100%; overflow: auto; }
+.l-inner{
+  padding: 15px;
+  background: #fff;
+  min-height: 360px;
+  margin:15px;
+}
+
+.l-search-form {
+   & {
+      padding: 24px !important;
+      background: #fbfbfb;
+      border: 1px solid #d9d9d9;
+      border-radius: 6px;
+   }
+
+   .ant-form-item {
+      display: flex;
+   }
+
+   .ant-form-item-label {
+      overflow: visible;
+   }
+}
+
+.l-search-result {
+   margin-top: 16px;
+   border: 1px dashed #e9e9e9;
+   border-radius: 6px;
+   background-color: #fafafa;
+   text-align: center;
+   position:relative;
+
+   table {
+      background:white;
+   }
+
+   .ant-spin-nested-loading > div > .ant-spin{
+      left:0;
+   }
+}

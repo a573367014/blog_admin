@@ -1,0 +1,46 @@
+{
+  'code': 200,
+  'msg': '成功',
+  'data': {}
+}
+
+
+/*    
+    *标为必填
+    上传参数：
+    {
+        //收件人  相当于 'name <email>'
+        *addresseeList:[{
+            "name": "Larry Thompson",
+            "email": "h.nrjq@oqx.mt",
+        }], 
+
+        //抄送人
+        copyList:[{
+            "name": "Larry Thompson",
+            "email": "h.nrjq@oqx.mt",
+        }], 
+
+        //密送人
+        secretList:[{
+            "name": "Larry Thompson",
+            "email": "h.nrjq@oqx.mt",
+        }], 
+
+        title:'dsfds', //主题
+        *sender:'dsfds@123', //发送者 
+        
+        oversea:1, //海外转发 0|1
+        needBackup:1, //保存到发件箱 0|1
+        ack:0, //收信回执 0|1
+        timer:0, //定时发信 0|1
+
+        *content:'内容', 
+        
+        uploadList:[100,300], //上传附件 ids(标识)
+
+        elsList:[100,388] //网盘附件 ids
+
+        emailList:[100,388] //邮件附件 ids
+    }
+*/

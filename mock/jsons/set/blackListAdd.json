@@ -1,0 +1,17 @@
+{
+    code:200,
+    msg:'',
+    data:{
+        returnData:function({_req}){
+            _req.body.id = Math.ceil(Math.random()*10000);
+            return _req.body;
+        }
+    }
+}
+/*    
+    *标为必填
+    上传参数：
+    {
+        value:'baidu.com'
+    }
+*/

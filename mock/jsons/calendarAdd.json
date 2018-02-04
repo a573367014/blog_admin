@@ -1,0 +1,29 @@
+{
+  'code': 200,
+  'msg': '成功',
+  'data': {
+      returnData:function({_req}){
+        return {..._req.body,id:Math.ceil(Math.random()*10000)};
+      }/*{
+        'id': 2,
+        'title': "明天去嗨皮fdsfdsfsdfsd", //日程内容
+        'start': "2017-08-27 ", //开始时间
+        'end': "2017-08-30", //结束时间
+        'place': "红灯区", //日程地点
+        'detail': "一起嗨", //事件描述
+      }*/
+  }
+}
+
+/*    
+    *标为必填
+    上传参数：
+    {
+        'title': "明天去嗨皮", //日程内容
+        'start': "2017-08-27 ", //开始时间
+        'end': "2017-08-30", //结束时间
+        'place': "红灯区", //日程地点
+        'detail': "一起嗨", //事件描述
+        'isAllDate': false, //全天
+      }
+*/

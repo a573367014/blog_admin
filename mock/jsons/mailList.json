@@ -1,0 +1,77 @@
+{
+  code: 200,
+  msg: "成功",
+  data: {
+    //sortType == 'date' ? rows=[今天array,昨天array,更早array] : rows=[所有邮件array]
+    "rows|3": [
+      [{
+        "id|1-100000": 1,
+        "look|0-1": 0, //0未读 1已读
+        "reply|0-1": 0, //0未回复 1已回复
+        "forward|0-1": 0, //0未转发 1已转发
+        "enclosure|0-1": 1, //1有附件 0没附件
+        "sender": '@email', //发件人 
+        "addressee": '@email', //接收人
+        "title": '@title', //主题
+        "date": "@datetime", //时间
+        "size|10000-1000000": 0 //大小
+      }, {
+        "id|1-100000": 1,
+        "look|0-1": 1,
+        "reply|0-1": 0,
+        "forward|0-1": 0,
+        "enclosure|0-1": 1,
+        "sender": '@email',
+        "title": '@title',
+        "date": "@datetime",
+        "size|10000-1000000": 0 //大小
+      }, {
+        "id|1-100000": 1,
+        "look|0-1": 1,
+        "reply|0-1": 0,
+        "forward|0-1": 0,
+        "enclosure|0-1": 1,
+        "sender": '@email',
+        "title": '日历提醒',
+        "date": "@datetime",
+        "size|10000-1000000": 0 //大小
+      }]
+    ],
+    "page": {
+      "currentPage|1-20": 1,
+      "totalPage": 10,
+      "pageSize": 10
+    },
+
+    //排序类型 date[默认]
+    "sortType":function({ _req, Mock }) {
+      return _req.body.sortType || "date";
+    },
+
+    //排序 asc[默认]
+    "sort": function({ _req, Mock }) {
+      return _req.body.sort || "asc";
+    },
+
+    "seeType": function({
+      _req,
+      Mock
+    }) {
+      return _req.body.seeType || "查看全部";
+    }
+  },
+}
+/*    
+    *标为必填
+    上传参数：
+    {
+        *currentPage:5, //当前页
+        *seeType:"2", // 查看类型 （全部0 ，未读1 ，已读2 ，已回复3 ，已转发4）
+        *mailBoxId:'', //邮箱ID
+        sortType:"date", //排序类型 sender[发件人]、title[主题]、date[时间]、size[大小]
+        sort:"asc", //排序 asc、desc
+      
+        searchKey:'关键词', //搜索关键词
+        searchField:'addressee'  //搜索的字段 addressee[收件人]、sender[发件人]、title[主题]
+    }
+*/

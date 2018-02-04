@@ -1,0 +1,59 @@
+{
+  code: 200,
+  msg: "成功",
+  data: {
+    id:function({_req}){
+        return _req.body.id;
+    },
+    name: '@title', //过滤规则名称
+    enable:1, //1启用/0禁用
+    rule:{
+        //发件人
+        senderEnable:1, //1[勾选]、0[没勾选]
+        senderSelection:'no contain', //contain[包含]、no contain[不包含]
+        senderCasesensitive:1, //大小写 1[区分]、0[不区分]
+        senderVal:'@email',
+        
+        //收件人、抄送人
+        addresseeEnable:0,
+        addresseeSelection:'contain',
+        addresseeCasesensitive:0,
+        addresseeVal:'',
+        
+        //邮件主题
+        themeEnable:0,
+        themeSelection:'contain',
+        themeCasesensitive:0,
+        themeVal:'',
+        
+        //邮件大小
+        sizeEnable:0,
+        sizeSelection:'>=', //>=[大于等于]、<[小于]
+        sizeVal:''
+    },
+    execute:{
+        //拒收该邮件
+        notEnable:0,
+        notSelection:'2', //2[不生成退信]、3[生成退信]
+
+        //转移到指定邮件夹
+        moveEnable:0,
+        moveSelection:2, //邮箱ID
+
+        //转发到指定邮箱
+        forwardEnable:1,
+        forwardVal:'123456@qq.com;456@qq.com',
+
+        //转发到指定邮箱
+        replyEnable:1,
+        replyVal:'fdsfdsfdsfsdfsdfsdfsd'
+    }
+  }
+}
+/*    
+    *标为必填
+    上传参数：
+    {
+      *id:0
+    }
+*/

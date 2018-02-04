@@ -1,0 +1,18 @@
+{
+  code: 200,
+  msg: "成功",
+  data: {
+    returnData:function({_req}){
+        return {..._req.body};
+    }
+  }
+}
+/*    
+    *标为必填
+    上传参数：
+    {
+        name:"自定义分组", //分组名称
+        ids:[1,2,3,4,5], //所选组员id集合
+        groupId:1,//所选组ID
+    }
+*/

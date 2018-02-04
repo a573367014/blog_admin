@@ -1,0 +1,27 @@
+{
+  'code': 200,
+  'msg': '成功',
+  'data': {
+    "chain|3": [{
+      "id|1-1000": 1,
+      "name": '@cword(3, 5)'
+    }],
+    "rows|50-100": [{
+      "id|1-100000": 1,
+      "ext|1": ["psd", "txt", "js", "png", "jpg", "xlsx", "p", "html", "shtml", "htm", "mp3"],
+      'name': function({ _req, Mock }) {
+          
+          let title = Mock.mock('@cword(3, 5)');
+          if (this.type == 'file') {
+            title = title + "." + this.ext
+          }
+          return title;
+      },
+      "date": '@datetime',
+      "size|100-10000000": 0,
+      "type|1": ["floder", "file"],
+      "filepath":"/images/a/b/c.jpg",
+      "download":"@url"
+    }]
+  }
+}

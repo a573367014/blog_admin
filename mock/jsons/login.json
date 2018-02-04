@@ -1,0 +1,9 @@
+{
+  'code': 200,
+  'msg': '恭喜您,登录成功'
+}
+/*
+ *pass:"fdsfds",
+ *user:"admi\",
+ *remember: 1, // 1/0[是否记住密码]
+ */

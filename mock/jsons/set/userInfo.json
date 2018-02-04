@@ -1,0 +1,36 @@
+{
+    code: 200,
+    msg: "成功",
+    data: {
+        username:'@name',  //姓名
+        nickname:'@name',  //昵称
+        sex:'m', //性别
+        birthday:'@date', //生日
+
+        mobile:'1', //手机
+        homephone:'2', //家庭电话
+        officephone:'3', //办公电话
+        fax:'4',  //传真电话
+        im:'5',//qq
+
+        country:'6', //国家
+        province:'7', //省份
+        city:'8',  //城市
+        postalcode:'9',  //邮编
+        address:'10', //地址
+
+        staffnumber:'11', //员工编号
+        hiredate:'12', //进入企业日期
+        department:'13', //部门
+        position:'14', //职位
+        homepage:'16', //个人主页
+        userlevel:'16',  //员工等级
+        others:'17' //其他
+    }
+}
+/*    
+    *标为必填
+    上传参数：
+    {
+    }
+*/

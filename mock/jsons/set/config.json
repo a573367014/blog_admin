@@ -1,0 +1,21 @@
+{
+  code: 200,
+  msg: "成功",
+  data: {
+    timezoneid: "8", //时区
+    defaultlanguageid: "1", //默认语言
+    pagesize: "10", //每页显示条数
+    defaultemail: '', //默认发送账户
+    replyhead: 'Re:', //回复信头显示
+    forwardhead: 'Fw:', //转发信头显示
+    ifautosavedraft: 1, //自动保存草稿
+    ack: "0", //读信回执
+    ifbackup: 1, //自动保存副本
+    ifautosavecontact: 1, //自动保存通讯录
+  }
+}
+/*    
+    *标为必填
+    上传参数：
+    {}
+*/

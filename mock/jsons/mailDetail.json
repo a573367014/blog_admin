@@ -1,0 +1,75 @@
+{
+  'code': 200,
+  'msg': '成功',
+  'data': {
+    "id": function({
+      _req,
+      Mock
+    }) {
+      return _req.body.id;
+    },
+    "mailBoxId|0-11":3,
+    //邮件主题
+    "title": "@title",
+    //邮件内容
+    "content": function({Mock}){
+      return `<h1>${Mock.mock('@title')}</h1><p>${Mock.mock('@paragraph')}</p><img style="width:100%" src="http://www.archcollege.com/wp-content/uploads/2017/10/1508253489662833.jpg" alt="">`;
+    },
+    //发送时间
+    "datetime": '@datetime',
+    //邮件下载地址
+    "download":"@url",
+    //头信息
+    "headInfo":`From: aaa &lt;test1@bizcn-test.com&gt;<br>To: 573367014 &lt;@email&gt;<br>Subject: =?UTF-8?B?5peg5Li76aKY?=<br>Date: Mon, 17 Jul 2017 13:52:11 +0800 (CST)<br>Message-Id: &lt;1500270731186@202.102.89.216&gt;<br>Reply-To: &lt;test1@bizcn-test.com&gt;<br>Sender: &lt;test1@bizcn-test.com&gt;<br>MIME-Version: 1.0<br>X-Mailer: WebMail@Bizcn<br>X-Priority: 3<br>Content-Type: multipart/mixed;boundary="=====@email====="`,
+    //上一封 下一封
+    "preMailId|1-10000":0,
+    "nextMailId|1-10000":0,
+    //发件人
+    "sender": {
+      "name": '@cword(0, 5)',
+      "email": 'test@qq.com'
+    },
+    //邮件大小
+    "size": "120000",
+    //收件人列表
+    "addresseeList|1-6": [{
+      "id|1-100000": 1,
+      "name": '@cword(0, 5)',
+      "email": '@email'
+    }],
+    //抄送人列表
+    "copyList|0-3": [{
+      "id|1-100000": 1,
+      "name": '@cword(0, 5)',
+      "email": '@email'
+    }],
+    //附件列表
+    "elsList|0-3": [{
+      "id|1-100000": 1,
+      "ext|1": ["psd", "txt", "js", "png", "jpg", "xlsx", "p", "html", "shtml", "htm", "mp3"],
+      'name': function({
+        _req,
+        Mock
+      }) {
+        let title = Mock.mock('@cword(3, 5)');
+        if (this.type == 'file') {
+          title = title + "." + this.ext
+        }
+        return title;
+      },
+      "date": '@datetime',
+      "size|100-10000000": 0,
+      "type": "file",
+      "download":"@url"
+    }]
+  }
+}
+
+/*    
+    *标为必填
+    上传参数：
+    {
+        folderId:"0", //邮箱ID
+        id:"42735" //邮件ID
+    }
+*/

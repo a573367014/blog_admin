@@ -1,0 +1,73 @@
+{
+  code: 200,
+  msg: "成功",
+  data: {
+    returnData:function({_req}){
+        var a = {
+            '10':'联系组1',
+            '11':'联系组2',
+            '12':'联系组3'
+        }
+        return {
+            ..._req.body,
+            id:Math.ceil(Math.random()*10000),
+            strGroup: (_req.body.group||[]).map( item => a[item+''] )
+        };
+    }
+  }
+}
+/*    
+    *标为必填
+    上传参数：
+    {
+        //姓名
+        name: '',
+
+        //邮箱
+        emails:[{
+            selection:'0',
+            email: ''
+        }],
+
+        //联系号码
+        tels:[{
+            selection:'0',
+            tel: '',
+        }],
+
+        //选择的分组
+        group:[],
+
+        //备注
+        notes: "",
+
+        //地址
+        address:[{
+            selection: '0',
+            country: '',
+            province: '',
+            city: '',
+            street: '',
+            zipCode: ''
+        }],
+
+        //生日
+        birthday:"",
+
+        //QQ帐号之类
+        apps:[{
+            selection:"0",
+            value:""
+        }],
+
+        //工作
+        works:[{  
+            company: '', 
+            from: '',
+            job: ''
+        }],
+
+        //自定义
+        customs:[{value:""}],
+    }
+*/

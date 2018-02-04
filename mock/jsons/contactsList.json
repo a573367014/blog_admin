@@ -1,0 +1,63 @@
+{
+  code: 200,
+  msg: "成功",
+  data: {
+    'rows|5-10': [{
+      "id|+1": 1,
+      "name": "@name",
+      "emails": [{
+        "selection": "0",
+        "email": "@email"
+      }, {
+        "selection": "1",
+        "email": "@email"
+      }],
+      "tels": [{
+        "selection": "0",
+        "tel|10000000000-20000000000": 0
+      }, {
+        "selection": "1",
+        "tel|10000000000-20000000000": 0
+      }],
+      "strGroup":["联系组1","联系组2"],
+      "group": [10,11],
+      "notes": "傻子一个",
+      "address": [{
+        "selection": "0",
+        "country": "中国",
+        "province": "福建",
+        "city": "厦门",
+        "street": "福州光阴区361号",
+        "zipCode": "300512"
+      }],
+      "birthday":"1992-02-08",
+      "apps": [{
+        "selection": "0",
+        "value": "4875484784"
+      }, {
+        "selection": "1",
+        "value": "4875484784"
+      }],
+      "works": [{
+        "company": "12345789",
+        "division": "123456",
+        "position": "123"
+      }],
+      "customs": [{
+        "value": "发生的发生的"
+      }, {
+        "value": "水电费是的范德萨发"
+      }]
+    }]
+  },
+}
+
+/*    
+    *标为必填
+    上传参数：
+    {
+        
+       *groupId:0, //分组ID
+       keyword:'' //搜索关键词
+    }
+*/

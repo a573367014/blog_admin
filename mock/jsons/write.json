@@ -1,0 +1,107 @@
+{
+  code: 200,
+  msg: "成功",
+  data: {
+    replyHead: "Re:", //回复的开头 
+    forwardHead: "Fw:", //转发的开头
+
+    //发件人列表
+    senderRows: [{
+      email: 'test@bizcn.com',
+      isDefault: false,
+    }, {
+      email: 'test2@bizcn.com',
+      isDefault: true,
+    }],
+    //签名列表
+    signRows:[{
+      content:'<div><b style="background-color: rgb(255, 0, 0);"><font color="#ffffff">&nbsp; 我是签名啊哈哈哈&nbsp; &nbsp;</font></b></div>',
+      id:100,
+      isDefault:true,
+      name:"dsfsd"
+    }],
+    //联系人列表
+    treeRows: [{
+      name: "测试分组",
+      'children': [{
+        'id': 110,
+        name: "test",
+        email: "test@qq.com"
+      },{
+        'id': 112,
+        name: "test2",
+        email: "test@qq.com"
+      }]
+    },{
+      name: "所有分组",
+      'children|1-3': [{
+        'id|1-1000000': 0,
+        name: "@name",
+        email: "@email"
+      }]
+    }, {
+      name: "共享通讯录",
+      'children|1-3': [{
+        'id|1-1000000': 0,
+        name: "@name",
+        email: "@email"
+      }]
+    }, {
+      name: "个人分组",
+      'children|1-3': [{
+        'id|1-1000000': 0,
+        name: "@name",
+        email: "@email"
+      }]
+    }, {
+      name: "组织架构",
+      'children': [{
+        'id|1-1000000': 0,
+        name: "@name",
+        'children': [{
+          'id|1-1000000': 0,
+          name: "@name",
+          'children': [{
+            'id|1-1000000': 0,
+            name: "@name",
+            email: "@email",
+          }]
+        }, {
+          'id|1-1000000': 0,
+          name: "@name",
+          email: "@email"
+        }]
+      }]
+    }],
+    //默认信纸
+    bgHtml:`
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tbody>
+              <tr>
+                  <td height="150" bgcolor="#e6e8e7">&nbsp;</td>
+                  <td width="554" height="150" background="http://202.102.89.216:80/images/paper/business/10/images/1.jpg" bgcolor="#e6e8e7">&nbsp;</td>
+              </tr>
+          </tbody>
+      </table>
+
+      <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#e6e8e7">
+          <tbody>
+              <tr>
+                  <td style="LINE-HEIGHT: 25px" valign="top">
+                      <div style="padding:0 30px;">
+                        <div style="background:url(http://202.102.89.216:80/images/paper/business/10/images/hx.gif)"><stationery></stationery><br><br><br><br><br><stationery></stationery></div>
+                      </div>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tbody>
+              <tr>
+                  <td width="101" height="80" background="http://202.102.89.216:80/images/paper/business/10/images/2.jpg" bgcolor="#e6e8e7">&nbsp;</td>
+                  <td bgcolor="#e6e8e7">&nbsp;</td>
+              </tr>
+          </tbody>
+      </table>`
+  }
+}

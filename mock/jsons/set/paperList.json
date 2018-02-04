@@ -1,0 +1,17 @@
+{
+  code: 200,
+  msg: "成功",
+  data: {
+    'rows|10-20':[{
+      'value|10-20':'@string', //需要传递的标识
+      preview:'http://202.102.89.216:80/images/paper/business/1/template.jpg' //预览图地址
+    }],
+    defaultValue:'0'  //默认信纸的值
+  }
+}
+/*    
+    *标为必填
+    上传参数：
+    {
+    }
+*/
