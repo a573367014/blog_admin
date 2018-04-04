@@ -1,12 +1,10 @@
 import 'nprogress/nprogress.css';
 import '@/assets/css/base.css';
 import '@/assets/css/styles.less';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import {createHashHistory as History} from 'history';
-// import App from './views/App';
 import App from './views/Test';
 import {message} from 'antd';
 
