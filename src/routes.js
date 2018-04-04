@@ -51,12 +51,6 @@ export default [
             ]
          },
          {
-            name: '文章管理',
-            path: '/article',
-            exact: true,
-            component: ArticleForm
-         },
-         {
             name: '标签管理',
             path: '/tag',
             exact: true,

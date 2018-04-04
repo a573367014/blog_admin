@@ -11,36 +11,38 @@ class Frame extends React.Component {
    constructor ({ route, location }) {
       super();
       this.state = {
+         // 侧边导航伸缩按钮
          collapsed: false,
-         branch: this.getMatchRoutes({ location, route })
+         // 当前路由层级链
+         curRoutes: this.getMatchRoutes({ location, route })
       };
    }
 
-   onCollapse = (collapsed) => {
-      this.setState({ collapsed });
+   componentWillReceiveProps ({ location, route }) {
+      this.setState({curRoutes: this.getMatchRoutes({ location, route })});
    }
 
-   onMenuItemClick = ({item, key, selectedKeys}) => {
-      this.props.history.push(key);
-   }
-
+   /**
+    * [获取当前路由层级链]
+    * @param  {Object} options.location [位置信息]
+    * @param  {Object} options.route    [所有路由]
+    * @return {Array}                   [当前路由层级链]
+    */
    getMatchRoutes ({ location, route }) {
-      const branch = matchRoutes(route.routes, location.pathname);
+      const curRoutes = matchRoutes(route.routes, location.pathname);
       return [
          ...(route.name ? [route] : []),
-         ...branch.map(
+         ...curRoutes.map(
             ({route, match}) => ({url: match.url, name: route.name, path: route.path})
          ).filter(item => item.name)
       ];
    }
 
-   componentWillReceiveProps ({ location, route }) {
-      this.setState({branch: this.getMatchRoutes({ location, route })});
-   }
+   
 
    render () {
       const {baseStore, route} = this.props;
-      const {branch, collapsed} = this.state;
+      const {curRoutes, collapsed} = this.state;
       const dropMenu = (
          <Menu >
             <Menu.Item key="0">
@@ -59,13 +61,13 @@ class Frame extends React.Component {
                className="l-aside"
                collapsible
                collapsed={collapsed}
-               onCollapse={this.onCollapse}>
+               onCollapse={collapsed => this.setState({ collapsed })}>
                <Link className="l-logo" to="/">Blog management</Link>
                <Menu
                   theme="dark"
-                  selectedKeys={branch.map(item => item.path)}
+                  selectedKeys={curRoutes.map(item => item.path)}
                   mode="inline"
-                  onClick={this.onMenuItemClick}>
+                  onClick={({item, key, selectedKeys}) => this.props.history.push(key)}>
                   <Menu.Item key="/article">
                      <Icon type="pie-chart" />
                      <span>文章管理</span>
@@ -88,9 +90,9 @@ class Frame extends React.Component {
                <div className="l-header">
                   <Breadcrumb className="u-fl">
                      {
-                        branch.map(
+                        curRoutes.map(
                            (route, index) => <Breadcrumb.Item key={route.url || '/'}>
-                              {branch.length - 1 !== index
+                              {curRoutes.length - 1 !== index
                                  ? <Link to={route.url || '/'}>{route.name}</Link>
                                  : route.name}
                            </Breadcrumb.Item>
